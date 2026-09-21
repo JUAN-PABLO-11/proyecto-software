@@ -1,9 +1,22 @@
 package miproyecto.prueba.model;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "reviews")
 public class Review {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private Long bookId;
+
+    @Column(nullable = false)
     private String username;
+
+    @Column(nullable = false)
     private String content;
 
     public Review(Long id, Long bookId, String username, String content) {
@@ -11,6 +24,10 @@ public class Review {
         this.bookId = bookId;
         this.username = username;
         this.content = content;
+    }
+
+    public Review() {
+
     }
 
     public Long getId() {
