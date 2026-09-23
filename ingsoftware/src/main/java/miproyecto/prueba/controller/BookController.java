@@ -21,9 +21,14 @@ public class BookController {
 
     @GetMapping("/search")
     public List<Book> searchBooks(
+            @RequestParam(name = "q", required = false) String query,
             @RequestParam(required = false) String author,
             @RequestParam(required = false) String title,
             @RequestParam(required = false) String isbn) {
+
+        if (query != null && !query.isBlank()) {
+            return bookService.searchBooks(query.trim());
+        }
 
         return bookService.searchBooks(author, title, isbn);
     }

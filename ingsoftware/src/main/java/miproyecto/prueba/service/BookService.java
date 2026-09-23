@@ -15,6 +15,10 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
+    public List<Book> searchBooks(String query) {
+        return bookRepository.findByAuthorContainingIgnoreCaseOrTitleContainingIgnoreCase(query, query);
+    }
+
     public List<Book> searchBooks(String author, String title, String isbn) {
         return bookRepository.searchBooks(author, title, isbn);
     }

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MiproyectoApplication<prueba>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "miproyecto.prueba.MiproyectoApplication",
+            "projectName": "prueba",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
